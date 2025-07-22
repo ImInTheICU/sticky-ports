@@ -2,12 +2,12 @@ version: "0.0.1" # Do not modify this.
 
 logging:
   sqlite:
-    enabled: true           # Enable logging to SQLite database.
-    file_name: "logger.db"  # SQLite database file name.
+    enabled: false           # Enable logging to SQLite database.
+    file_name: "logger.db"   # SQLite database file name.
   
   abuseipdb:
-    enabled: true           # Enable reporting to AbuseIPDB.
-    api_key: "f76ea0b9551fe6f2ad6fb5030f68082a1743ce374a72debc8ae1bf46693d65eaa991669fc99241a5" 
+    enabled: false           # Enable reporting to AbuseIPDB.
+    api_key: "..." 
                             # API key for AbuseIPDB. Obtain one at https://www.abuseipdb.com/account/api
     identifier: "server"    # Identifier to distinguish reports if using multiple servers with the same AbuseIPDB account.
     ttl_time: 900           # Maximum time-to-live (in seconds) for the recently reported cache.
