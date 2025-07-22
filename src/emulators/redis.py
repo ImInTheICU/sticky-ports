@@ -2,14 +2,13 @@
 import time
 import random
 import asyncio
-import socket, platform
+import socket
+import platform
 from .base import BaseEmulator
-from src.logger import queue
-
+from logger import queue
 
 def _peer_ip(writer):
     return writer.get_extra_info("peername")[0]
-
 
 class RedisEmulator(BaseEmulator):
     def __init__(self, bind_ip=None, bind_port=None, config=None):

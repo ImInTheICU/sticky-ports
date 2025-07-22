@@ -11,9 +11,8 @@ from emulators.mysql import MySQLEmulator
 from emulators.vnc import VNCEmulator
 from emulators.rdp import RDPEmulator
 
-from src.config import CONFIG
-from src.logger import log_sink
-
+from config import CONFIG
+from logger import log_sink
 
 async def main() -> None:
     asyncio.create_task(log_sink())

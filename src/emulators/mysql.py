@@ -4,12 +4,10 @@ import random
 import asyncio
 import struct
 from .base import BaseEmulator
-from src.logger import queue
-
+from logger import queue
 
 def _peer_ip(writer):
     return writer.get_extra_info("peername")[0]
-
 
 def build_handshake(ver, cid):
     p = bytearray()

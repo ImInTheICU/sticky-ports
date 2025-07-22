@@ -8,7 +8,7 @@ import aiohttp
 from cachetools import TTLCache
 from datetime import datetime, timezone
 
-from src.config import CONFIG
+from config import CONFIG
 
 queue = asyncio.Queue()
 

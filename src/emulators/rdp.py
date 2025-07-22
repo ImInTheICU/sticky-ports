@@ -3,8 +3,7 @@ import asyncio
 import time
 import random
 from .base import BaseEmulator
-from src.logger import queue
-
+from logger import queue
 
 class RDPEmulator(BaseEmulator):
     def __init__(self, bind_ip=None, bind_port=None, config=None):

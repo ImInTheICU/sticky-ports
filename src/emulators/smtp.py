@@ -5,15 +5,12 @@ import asyncio
 import socket
 from ssl import SSLContext, PROTOCOL_TLS_SERVER
 from .base import BaseEmulator
-from src.logger import queue
-
+from logger import queue
 
 def _peer_ip(writer):
     return writer.get_extra_info("peername")[0]
 
-
 TLS = SSLContext(PROTOCOL_TLS_SERVER)
-
 
 class SMTPEmulator(BaseEmulator):
     def __init__(self, bind_ip=None, bind_port=None, config=None):
