@@ -42,21 +42,27 @@ Follow these steps to get Sticky Ports up and running on your system:
    cd sticky-ports
    ```
 
-2. **Create and activate a virtual environment** (recommended)
+2. **Change directory to the source**
+
+   ```bash
+   cd src
+   ```
+
+3. **Create and activate a virtual environment** (recommended)
 
    ```bash
    python3.12 -m venv venv
    source venv/bin/activate
    ```
 
-3. **Install dependencies**
+4. **Install dependencies**
 
    ```bash
    pip install --upgrade pip
    pip install -r requirements.txt
    ```
 
-4. **Configure the honeypot**
+5. **Configure the honeypot**
 
    * Copy the sample configuration:
 
@@ -65,13 +71,13 @@ Follow these steps to get Sticky Ports up and running on your system:
      ```
    * Open `config.yaml` in your favorite editor and adjust settings (e.g., ports, logging options, AbuseIPDB API key).
 
-5. **Run the engine**
+6. **Run the engine**
 
    ```bash
    python engine.py
    ```
 
-6. **(Optional) Set up as a systemd service**
+7. **(Optional) Set up as a systemd service**
 
    To have Sticky Ports start automatically at boot and restart on failure, create a systemd unit file:
 
@@ -83,8 +89,8 @@ Follow these steps to get Sticky Ports up and running on your system:
    [Service]
    Type=simple
    User=YOUR_USER
-   WorkingDirectory=/path/to/sticky-ports
-   ExecStart=/path/to/sticky-ports/venv/bin/python engine.py
+   WorkingDirectory=/path/to/sticky-ports/src
+   ExecStart=/path/to/sticky-ports/src/venv/bin/python engine.py
    Restart=on-failure
    RestartSec=10s
 
