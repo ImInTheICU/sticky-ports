@@ -80,17 +80,24 @@ Follow these steps to get Sticky Ports up and running on your system:
 7. **(Required) Firewall setup**
    
    * To allow Sticky Ports to operate you should open the required ports on your system/network's firewall.
+   
    * UFW Example:
 
-   `sudo ufw allow 3306` 
+   ```bash
+   sudo ufw allow 3306
+   ``` 
    
    * IPTables Example:
    
-   `sudo iptables -A INPUT -p tcp --dport 3306 -j ACCEPT`
+   ```bash
+   sudo iptables -A INPUT -p tcp --dport 3306 -j ACCEPT
+   ```
    
    * FireWallD Example:
    
-   `sudo firewall-cmd --permanent --add-port=3306/tcp`
+   ```bash
+   sudo firewall-cmd --permanent --add-port=3306/tcp
+   ```
 
 8. **(Optional) Set up as a systemd service**
 
