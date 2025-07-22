@@ -1,0 +1,55 @@
+version: "0.0.1" # Do not modify this.
+
+logging:
+  sqlite:
+    enabled: true           # Enable logging to SQLite database.
+    file_name: "logger.db"  # SQLite database file name.
+  
+  abuseipdb:
+    enabled: true           # Enable reporting to AbuseIPDB.
+    api_key: "f76ea0b9551fe6f2ad6fb5030f68082a1743ce374a72debc8ae1bf46693d65eaa991669fc99241a5" 
+                            # API key for AbuseIPDB. Obtain one at https://www.abuseipdb.com/account/api
+    identifier: "server"    # Identifier to distinguish reports if using multiple servers with the same AbuseIPDB account.
+    ttl_time: 900           # Maximum time-to-live (in seconds) for the recently reported cache.
+    ttl_size: 4500          # Cache size limit. Recommended to be about 5 times ttl_time (e.g., ttl_time=900 * 5 = 4500).
+
+emulators:
+  redis:
+    enabled: true          # Enable Redis honeypot.
+    bind_ip: "0.0.0.0"     # IP address to bind Redis emulator.
+    bind_port: 6379        # Port for Redis.
+
+  smtp:
+    enabled: true          # Enable SMTP honeypot.
+    bind_ip: "0.0.0.0"     # IP address to bind SMTP emulator.
+    bind_port: 25          # Port for SMTP.
+
+  memcached:
+    enabled: true          # Enable Memcached honeypot.
+    bind_ip: "0.0.0.0"     # IP address to bind Memcached emulator.
+    bind_port: 11211       # Port for Memcached.
+
+  ftp:
+    enabled: true          # Enable FTP honeypot.
+    bind_ip: "0.0.0.0"     # IP address to bind FTP emulator.
+    bind_port: 21          # Port for FTP.
+
+  telnet:
+    enabled: true          # Enable Telnet honeypot.
+    bind_ip: "0.0.0.0"     # IP address to bind Telnet emulator.
+    bind_port: 23          # Port for Telnet.
+
+  mysql:
+    enabled: true          # Enable MySQL honeypot.
+    bind_ip: "0.0.0.0"     # IP address to bind MySQL emulator.
+    bind_port: 3306        # Port for MySQL.
+
+  vnc:
+    enabled: true          # Enable VNC honeypot.
+    bind_ip: "0.0.0.0"     # IP address to bind VNC emulator.
+    bind_port: 5900        # Port for VNC.
+
+  rdp:
+    enabled: true          # Enable RDP honeypot.
+    bind_ip: "0.0.0.0"     # IP address to bind RDP emulator.
+    bind_port: 3389        # Port for RDP.
